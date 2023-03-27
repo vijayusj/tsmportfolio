@@ -1,0 +1,142 @@
+@use 'sass:map';
+// .main[data-theme='dark'] {
+//   $bg-primary: black;
+//   @include setTheme(
+//     #212121,
+//     #212121,
+//     aliceblue,
+//     aliceblue,
+//     rgba(213, 211, 211, 0.35) -4px 5px 4px 0px,
+//     rgba(205, 205, 69, 0.9) 0px 15px 25px,
+//     rgba(180, 178, 178, 0.205) 7px 6px 3px 2px
+//   );
+// }
+// .main[data-theme='light'] {
+//   $bg-primary: white;
+
+//   @include setTheme(
+//     #ffffff,
+//     #fdfbfb,
+//     rgb(6, 9, 11),
+//     rgb(2, 3, 4),
+//     rgba(250, 129, 129, 0.35) -4px 5px 4px 0px,
+//     rgba(205, 205, 69, 0.9) 0px 15px 25px,
+//     rgba(180, 178, 178, 0.205) 7px 6px 3px 2px
+//   );
+// }
+
+.main[data-theme='dark'] {
+  --bg-primary: #212121;
+  // --bg-primary: black;
+  --bg-sec: rgba(255, 255, 255, 0.249);
+
+  --color-primary: aliceblue;
+  --color-sec: rgb(255, 5, 5);
+  --box-shadow1: rgba(213, 211, 211, 0.35) -4px 5px 4px 0px;
+  --box-shadow2: rgba(180, 178, 178, 0.205) 7px 6px 3px 2px;
+  --box-shadow-mobile: rgba(180, 178, 178, 0.205) 3.5px 3px 3px 2px;
+  --box-shadow-projects: rgba(255, 255, 255, 0.168) -4px -2px 5px 1px,
+    5px 5px 3px #0e0e0e;
+  --icon-color: white;
+  --icon-hover: rgb(255, 255, 255);
+  --cursor-text: rgb(198, 21, 98);
+  --cursor: rgb(7, 148, 9);
+}
+.main[data-theme='light'] {
+  --bg-primary: #ffffff;
+}
+.main[data-theme='blue'] {
+  --bg-primary: rgb(174, 66, 224);
+}
+
+$break-points: (
+  'break-point-mobile-small': 360px,
+  'break-point-mobile-big': 400px,
+  'break-point-tablet': 900px,
+  'break-point-desktop': 1200px,
+);
+
+@function break-point($break-point-limit) {
+  @return map.get($break-points, $break-point-limit);
+}
+
+@mixin desktop {
+  @media screen and (max-width: break-point(break-point-desktop)) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (max-width: break-point(break-point-tablet)) {
+    @content;
+  }
+}
+@mixin mobile-big {
+  @media screen and (max-width: break-point(break-point-mobile-big)) {
+    @content;
+  }
+}
+@mixin mobile-small {
+  @media screen and (max-width: break-point(break-point-mobile-small)) {
+    @content;
+  }
+}
+
+@mixin heading {
+  height: 20%;
+  // max-width: 90vw;
+  h1 {
+    position: relative;
+    display: inline-block;
+    // width: auto;
+    margin-left: 4rem;
+    padding-top: 2rem;
+    color: aliceblue;
+    text-transform: capitalize;
+    font-size: 6rem;
+    font-family: 'Istok Web', sans-serif;
+
+    span {
+      color: var(--color-sec);
+    }
+    &::after {
+      content: '';
+      height: 0.4rem;
+      width: 95%;
+      border-radius: 2px;
+      background-color: var(--color-primary);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: scaleX(1);
+      transform-origin: left;
+      transition: transform 0.3s ease-in-out;
+    }
+    &:hover,
+    &:active {
+      &::after {
+        transform-origin: right;
+        transform: scaleX(0);
+      }
+    }
+  }
+  @include desktop {
+    h1 {
+      font-size: 5rem;
+    }
+  }
+  @include tablet {
+    h1 {
+      font-size: 4.3rem;
+      margin-left: 2rem;
+      padding-top: 1rem;
+    }
+  }
+  @include mobile-big {
+    height: 12%;
+  }
+}
+@mixin grade-bg {
+  background: linear-gradient(to right, yellow, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

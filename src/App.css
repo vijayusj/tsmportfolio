@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Istok+Web:wght@700&family=Pacifico&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  font-size: 62.5%;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  /* overflow-x: hidden; */
+  /* overflow-y: hidden; */
+  margin: 0;
+  padding: 0;
+}

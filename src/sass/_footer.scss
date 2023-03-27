@@ -1,0 +1,12 @@
+.footer {
+  background-color: var(--bg-primary);
+  font-size: calc(1rem + 0.7vw);
+  color: var(--color-primary);
+  height: 5rem;
+  text-align: center;
+  border-bottom: 3px solid var(--color-sec);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(290deg, rgb(38, 153, 151), rgb(245, 0, 175));
+}

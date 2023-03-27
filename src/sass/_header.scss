@@ -1,0 +1,352 @@
+@use 'variables' as *;
+.header {
+  width: 100dvw;
+  height: 100dvh;
+  max-width: 100%;
+  // max-height: 100%;
+  background-color: var(--bg-primary);
+  position: relative;
+
+  // }
+  .part {
+    // position: absolute;
+
+    #tsparticles {
+      width: 100dvw;
+      height: 100dvh;
+    }
+  }
+  .cont {
+    color: var(--color-primary);
+    // background-color: rgb(163, 230, 230);
+    position: absolute;
+    top: 30%;
+    left: 4%;
+    h1 {
+      text-transform: capitalize;
+      margin-bottom: 4rem;
+      font-size: 5rem;
+      .wave {
+        transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+        display: inline-block;
+        animation: wave-animation 2.4s infinite;
+      }
+      @keyframes wave-animation {
+        0% {
+          transform: rotate(0deg);
+        }
+        10% {
+          transform: rotate(20deg);
+        }
+        20% {
+          transform: rotate(-9deg);
+        }
+        30% {
+          transform: rotate(18deg);
+        }
+        40% {
+          transform: rotate(-7deg);
+        }
+        50% {
+          transform: rotate(16deg);
+        }
+        70% {
+          transform: rotate(0deg);
+        } /* Reset for the last half to pause */
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+    }
+    .content {
+      display: flex;
+      // background-color: rgb(132, 193, 193);
+      gap: 3rem;
+      align-items: center;
+      // padding: 5rem;
+
+      h2 {
+        font-size: 3rem;
+        color: var(--color-primary);
+      }
+      .type {
+        font-size: 4rem;
+        font-weight: 800;
+        color: var(--cursor-text);
+      }
+      .type::after {
+        content: '|';
+        animation: cursor 0.6s infinite step-start;
+
+        color: var(--cursor);
+      }
+
+      @keyframes cursor {
+        50% {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  .photo {
+    position: absolute;
+    // top: 30%;
+    bottom: 13%;
+    right: 8%;
+    // background-color: aqua;
+    // padding: 1rem;
+    height: 44rem;
+    width: 34rem;
+
+    .inner {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      transform-style: preserve-3d;
+      transition: transform 1s ease;
+      transform: perspective(150rem);
+      animation: rotate 2s ease-out;
+
+      .photo-side {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        backface-visibility: hidden;
+      }
+      .back {
+        transform: rotateY(180deg);
+      }
+    }
+    img {
+      height: 44rem;
+      width: 34rem;
+    }
+    .mask {
+      position: absolute;
+      backface-visibility: hidden;
+      top: 33%;
+      left: 21.5%;
+      height: 18rem;
+      width: 22rem;
+      // background-color: aqua;
+    }
+    &:hover {
+      .inner {
+        transform: rotateY(180deg);
+      }
+    }
+    @keyframes rotate {
+      0% {
+        transform: translateX(-150%) rotateY(420deg);
+      }
+      100% {
+        transform: translateX(0%) rotateY(0deg);
+      }
+    }
+  }
+
+  .audio {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    .music {
+      height: 7rem;
+      width: 7rem;
+      border: none;
+      text-align: center;
+      background-color: inherit;
+
+      .ic {
+        font-size: 3rem;
+        transform: scale(1);
+        transition: transform 0.2s ease-in-out;
+        &:active {
+          transform: scale(1.3);
+        }
+      }
+      .play {
+        color: greenyellow;
+      }
+      .mute {
+        color: rgb(225, 46, 46);
+      }
+    }
+  }
+
+  //icons
+  .links {
+    position: absolute;
+    top: 78%;
+    left: 4rem;
+    // width: 40rem;
+    // height: 10rem;
+
+    // background-color: rgb(39, 150, 62);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 4rem;
+    .icon {
+      font-size: 4.5rem;
+      color: var(--icon-color);
+      // background-color: aqua;
+      padding: 0.8rem;
+      border-radius: 1rem;
+      transition: 0.2s ease-in-out;
+      box-shadow: var(--box-shadow1);
+
+      &:hover {
+        background-color: var(--icon-hover);
+        box-shadow: rgba(205, 205, 69, 0.9) 0px 15px 25px,
+          rgba(27, 160, 27, 0.9) 0px 5px 10px;
+      }
+    }
+    a {
+      text-decoration: none;
+    }
+    .li:hover {
+      color: rgb(34, 28, 186);
+    }
+    .git:hover {
+      color: black;
+    }
+    .insta:hover {
+      color: rgba(209, 24, 175, 0.66);
+    }
+    .leet:hover {
+      color: rgb(232, 183, 6);
+    }
+  }
+
+  // **************media desktop******//
+  @include desktop {
+    .cont {
+      h1 {
+        font-size: 4rem;
+        margin-bottom: 3rem;
+      }
+    }
+    .photo {
+      height: 40rem;
+      width: 30rem;
+      img {
+        height: 40rem;
+        width: 30rem;
+      }
+      .mask {
+        left: 21.7%;
+        height: 16.5rem;
+        width: 19rem;
+      }
+    }
+  }
+  //*********tablet***************//
+  @include tablet {
+    .cont {
+      h1 {
+        // font-size: 3.5rem;
+        margin-bottom: 3rem;
+      }
+      .content {
+        h2 {
+          font-size: 2rem;
+        }
+        .type {
+          font-size: 3rem;
+        }
+      }
+    }
+    .photo {
+      right: 3%;
+    }
+    .links {
+      top: 80%;
+      left: 2rem;
+    }
+  }
+  @include mobile-big {
+    .cont {
+      top: 65%;
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+      }
+      .content {
+        gap: 2rem;
+        h2 {
+          font-size: 2rem;
+        }
+        .type {
+          font-size: 2.5rem;
+        }
+      }
+    }
+    .photo {
+      height: 35rem;
+      width: 27rem;
+      // bottom: 22%;
+      top: 6%;
+      right: 18%;
+      img {
+        height: 35rem;
+        width: 27rem;
+      }
+      .mask {
+        top: 34.5%;
+        left: 22%;
+        height: 13.5rem;
+        width: 17rem;
+      }
+    }
+    .links {
+      // top: 80%;
+      bottom: 0%;
+
+      // background-color: aqua;
+      column-gap: 2rem;
+      left: 2rem;
+      .icon {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  @include mobile-small {
+    .cont {
+      top: 65%;
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+      }
+      .content {
+        gap: 2rem;
+        h2 {
+          font-size: 2rem;
+        }
+        .type {
+          font-size: 2rem;
+        }
+      }
+    }
+    .photo {
+      height: 32rem;
+      width: 24rem;
+      // bottom: 22%;
+      top: 6%;
+      right: 18%;
+      img {
+        height: 32rem;
+        width: 24rem;
+      }
+      .mask {
+        top: 33%;
+        left: 22.5%;
+        height: 13rem;
+        width: 15rem;
+      }
+    }
+  }
+}

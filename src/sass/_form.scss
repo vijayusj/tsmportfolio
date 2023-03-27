@@ -1,0 +1,332 @@
+@use 'variables' as *;
+
+.container {
+  position: relative;
+  height: 110vh;
+  background-color: var(--bg-primary);
+  border-bottom: 3px solid var(--color-sec);
+  .text {
+    @include heading;
+
+    height: 15vh;
+    // background-color: aqua;
+    // position: absolute;
+    // margin-bottom: 1rem;
+  }
+  .ani {
+    color: aliceblue;
+    // z-index: 99;
+    position: absolute;
+    top: 10rem;
+    left: 0;
+
+    #tsparticles {
+      z-index: -1;
+      height: 90vh;
+      width: 90vw;
+
+      // max-width: 100rem;
+      // max-height: 100rem;
+    }
+  }
+
+  .form-container {
+    // position: relative;
+    // height: 90vh;
+    height: 90vh;
+    max-width: 100dvw;
+    text-align: center;
+
+    // background-color: rgba(127, 255, 212, 0.195);
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    .form {
+      // background-color: rgba(100, 47, 161, 0.333);
+      // width: 70rem;
+      // height: 55rem;
+      position: relative;
+      width: 55%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      row-gap: 3rem;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 3rem;
+      // box-shadow: white 1px 1px 0px 0px;
+      // border: 3px solid red;
+      .inputt {
+        position: relative;
+        padding: 0.5%;
+        padding-bottom: 0;
+        // background-color: aqua;
+        height: 30%;
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+        column-gap: 2%;
+        // transition: transform 0.3s ease;
+        box-shadow: rgba(203, 84, 203, 0.427) -1.5px -1.5px 5px 1px,
+          rgb(0, 0, 0) 1px 1px 5px 1px;
+        label {
+          color: var(--color-primary);
+          padding: 1%;
+          width: 20%;
+          height: 80%;
+          font-size: 2rem;
+          // background-color: rgb(55, 185, 163);
+          transition: all 0.2s ease-in-out;
+          // display: flex;
+          // align-items: center;
+          // justify-content: center;
+        }
+        .underline {
+          z-index: 2;
+          background-color: var(--color-primary);
+          position: absolute;
+          left: 22%;
+          top: 84%;
+          height: 0.5rem;
+          width: 77.5%;
+
+          // background-color: black;
+          transform-origin: left;
+          transform: scaleX(0);
+          transition: transform 0.3s ease;
+        }
+        .flash {
+          position: absolute;
+          left: 21.5%;
+          top: 13%;
+          height: 70%;
+          width: 70%;
+
+          transform: scaleX(0);
+          pointer-events: none;
+          opacity: 0.2;
+          background-color: #2ef906ac;
+        }
+        input {
+          border-radius: 0 1rem 0 0;
+          font-family: 'Josefin Sans', sans-serif;
+          position: relative;
+          // background-color: bisque;
+          display: block;
+          width: 80%;
+          height: 80%;
+          background: rgba(0, 0, 0, 0.2);
+          padding: 1%;
+          // box-shadow: white;
+          border: none;
+          // border-bottom: 0.1px solid white;
+          // transition: all 0.2s ease;
+          font-size: 2.4rem;
+          // color: rgb(255, 3, 167);
+          color: rgb(6, 241, 163);
+
+          &:focus {
+            outline: none;
+
+            // border-left: 3px solid green;
+          }
+          &:focus ~ label {
+            // transform-origin: left;
+
+            // transform: scale(1.3);
+            font-size: 2.5rem;
+            // color: green;
+            @include grade-bg;
+          }
+          &:focus ~ .underline {
+            transform: scaleX(1);
+            background: linear-gradient(to right, yellow, white);
+          }
+
+          &:focus ~ .flash {
+            transform-origin: left;
+            animation: input-focus 0.1s ease;
+          }
+          &::selection {
+            background-color: rgba(222, 68, 189, 0.441);
+            color: white;
+          }
+        }
+      }
+
+      button {
+        // height: 20%;
+        // margin-bottom: 1rem;
+        padding: 17px 40px;
+        border-radius: 50px;
+        border: 0;
+        background: linear-gradient(
+          to right top,
+          rgb(44, 220, 20),
+          rgb(194, 47, 192)
+        );
+        box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        font-size: 15px;
+        transition: all 0.4s ease;
+        &:hover {
+          letter-spacing: 3px;
+          background-color: hsl(261deg 80% 48%);
+          color: hsl(0, 0%, 100%);
+        }
+        &:active {
+          letter-spacing: 3px;
+          background-color: hsl(261deg 80% 48%);
+          color: hsl(0, 0%, 100%);
+
+          transform: translateY(10px);
+          transition: 50ms;
+        }
+      }
+      .mit {
+        position: absolute;
+        height: 10%;
+        top: 90%;
+        left: -25%;
+        opacity: 0;
+
+        h3 {
+          text-transform: capitalize;
+          font-size: 2.7rem;
+          color: aliceblue;
+        }
+      }
+
+      .sub {
+        animation: sub2 1.5s ease-in-out 1s 4;
+        @include grade-bg;
+      }
+    }
+    @keyframes sub2 {
+      0%,
+      100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes input-focus {
+      from {
+        transform: scaleX(0);
+      }
+      to {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  @include tablet {
+    .text {
+      // height: 10vh;
+    }
+    .form-container {
+      .form {
+        height: 90%;
+        width: 90%;
+        padding: 2rem 2rem;
+        .inputt {
+          label {
+            width: 25%;
+          }
+          input {
+            width: 75%;
+          }
+          .underline {
+            width: 72.5%;
+            left: 27%;
+          }
+          .flash {
+            left: 26.8%;
+            width: 67%;
+          }
+        }
+
+        .mit {
+          // background-color: aqua;
+          top: 98%;
+          left: 14%;
+          h3 {
+            font-size: 2.8rem;
+          }
+        }
+      }
+    }
+  }
+
+  @include mobile-big {
+    height: 90vh;
+    .form-container {
+      height: 75vh;
+      padding: 0.8rem;
+      .form {
+        width: 100%;
+        padding: 0;
+        row-gap: 2rem;
+        .inputt {
+          height: 15%;
+          label {
+            font-size: 1.8rem;
+          }
+          .underline {
+            left: 26.8%;
+          }
+          input {
+            font-size: 1.8rem;
+            &:focus ~ label {
+              font-size: 2rem;
+            }
+          }
+        }
+
+        button {
+          padding: 15px 30px;
+        }
+        .mit {
+          // background-color: aqua;
+
+          h3 {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+
+  @include mobile-small {
+    // height: 80vh;
+    .form-container {
+      // height: 65vh;
+      .form {
+        width: 90%;
+        .inputt {
+          label {
+            font-size: 1.5rem;
+          }
+          input {
+            &:focus ~ label {
+              font-size: 1.7rem;
+            }
+          }
+        }
+        .mit {
+          left: 10%;
+          h3 {
+            font-size: 1.8rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.cerf {
+  border-top: 3px solid var(--color-sec);
+  background-color: var(--bg-primary);
+  // background-color: aqua;
+  padding: 4rem 3rem 4rem 3rem;
+  // margin: 1rem;
+  overflow: scroll;
+  ul {
+    // margin: 5rem;
+    display: flex;
+    // background-color: bisque;
+    // justify-content: space-evenly;
+    column-gap: 4rem;
+    li {
+      // display: block;
+      position: relative;
+      // overflow: hidden;
+      transition: 0.3s ease-in-out;
+
+      h2 {
+        position: absolute;
+        text-transform: capitalize;
+        color: rgb(5, 255, 38);
+        top: 65%;
+        left: -29%;
+        font-size: 2.5rem;
+        /* transform: rotate(45deg); */
+        opacity: -1;
+        transition: all 1s ease-in-out;
+      }
+      &:hover {
+        transform: scale(1.1);
+        h2 {
+          top: 61%;
+          left: 57%;
+          /* right: 4rem; */
+          transform: rotate(360deg);
+          opacity: 1;
+        }
+      }
+    }
+  }
+  img {
+    height: 30rem;
+    width: 40rem;
+    border-radius: 6px;
+    &:last-child {
+      margin-right: 3rem;
+    }
+  }
+}

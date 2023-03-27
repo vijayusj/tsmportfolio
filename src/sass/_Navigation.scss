@@ -1,0 +1,79 @@
+.images {
+  position: fixed;
+  left: 5rem;
+  top: 60%;
+  // padding: 1rem;
+  // background-color: aqua;
+  z-index: 99;
+  // border-radius: 4rem;
+  // overflow: hidden;
+
+  .btn {
+    font-size: 4rem;
+    border: none;
+    background-color: inherit;
+  }
+  button {
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .btns {
+    height: 100%;
+    width: 100%;
+
+    // background-color: aquamarine;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4rem;
+    row-gap: 4rem;
+    scale: 0;
+    transition: scale 0.5s ease-in;
+
+    .img {
+      height: 10rem;
+      width: 10rem;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s ease-in-out;
+
+      img {
+        height: 3rem;
+        width: 4rem;
+        // color: black;
+      }
+      &:hover {
+        scale: 1.2;
+      }
+    }
+    .img1 {
+      border-radius: 80px 5px 5px 5px;
+      &:hover {
+        background-color: rgb(120, 83, 240);
+
+        filter: invert(100%);
+      }
+    }
+    .img2 {
+      border-radius: 5px 90px 5px 5px;
+    }
+    .img3 {
+      border-radius: 5px 5px 5px 90px;
+    }
+    .img4 {
+      border-radius: 5px 5px 90px 5px;
+    }
+  }
+  .active {
+    scale: 1;
+  }
+  .link {
+    background-color: aqua;
+    fill: bisque;
+  }
+}

@@ -1,0 +1,62 @@
+@use 'variables' as *;
+.settings {
+  position: fixed;
+  z-index: 99;
+  right: 0;
+  top: 13%;
+  padding: 1rem 1.4rem;
+  // width: 4rem;
+  background-color: rgba(7, 246, 67, 0.832);
+  border-radius: 1rem 0 0 1rem;
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out;
+
+  .toggle {
+    background-color: inherit;
+    z-index: 90;
+    // background-color: rgba(7, 246, 67, 0.619);
+    position: absolute;
+    font-size: 3rem;
+    padding: 0.8rem;
+    top: 50%;
+    transform: translate(-131%, -50%);
+
+    border-radius: inherit;
+    border: none;
+
+    .ss {
+      animation: spinner 2.5s linear infinite;
+    }
+  }
+  .colors {
+    display: flex;
+    column-gap: 2rem;
+    // justify-content: space-evenly;
+    .color {
+      height: 5.8rem;
+      width: 5.8rem;
+      border-radius: 50%;
+      border: none;
+    }
+    .dark {
+      background-color: black;
+    }
+    .light {
+      background-color: aliceblue;
+    }
+    .blu {
+      background-color: rgb(226, 68, 232);
+    }
+  }
+  @keyframes spinner {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @include tablet {
+  }
+}
+.open {
+  transform: translateX(0);
+}
