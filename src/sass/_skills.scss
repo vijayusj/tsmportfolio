@@ -9,6 +9,7 @@
   // height: 100vh;
   // max-height: 100%;
   // background-color: aquamarine;
+
   height: 80vh;
   width: 100vw;
   max-width: 100vw;
@@ -18,6 +19,7 @@
 
   .text {
     @include heading;
+    // background-color: bisque;
   }
 
   .sk-cont {

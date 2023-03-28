@@ -1,7 +1,9 @@
 @use 'variables' as *;
 
 .projects-container {
+  width: 100vw;
   max-width: 100vw;
+
   background-color: var(--bg-primary);
   .text {
     @include heading;
@@ -16,11 +18,11 @@
   align-items: center;
   flex-wrap: wrap;
   // background-color: aquamarine;
-  gap: 5rem;
+  row-gap: 5rem;
   .project {
     width: 35%;
     // background-color: rgb(238, 146, 232);
-    height: 35rem;
+    height: 36rem;
     // perspective: 150rem;
 
     //transform

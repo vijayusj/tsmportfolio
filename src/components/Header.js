@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import Background from './BackgroundA';
-import Blast from './Blast';
+
 import img1 from '../assets/images/5295497.jpg';
 import img2 from '../assets/images/5295526.jpg';
 import img3 from '../assets/images/animated.jpeg';

@@ -1,29 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { cert } from './utils';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 const Cert = () => {
   const length = cert.length;
   const [slideIndex, setSlideIndex] = useState(0);
-  const [prevIndex, setPrevIndex] = useState(length - 1);
-  const [nextIndex, setNextIndex] = useState(slideIndex + 1);
 
   function slider(direction) {
-    // console.log('hii');
     if (direction === 'next') {
       setSlideIndex(slideIndex === length - 1 ? 0 : slideIndex + 1);
     } else {
       setSlideIndex(slideIndex === 0 ? length - 1 : slideIndex - 1);
       // console.log('first');
     }
-
-    // setPrevIndex(slideIndex === 0 ? length - 1 : slideIndex - 1);
-    // setNextIndex(slideIndex === length - 1 ? 0 : slideIndex + 1);
-    // console.log(prevIndex, slideIndex, nextIndex);
   }
-  useEffect(() => {
-    setPrevIndex(slideIndex === 0 ? length - 1 : slideIndex - 1);
-    setNextIndex(slideIndex === length - 1 ? 0 : slideIndex + 1);
-  }, [slideIndex]);
+
   return (
     <div className="certificates">
       <div className="text">

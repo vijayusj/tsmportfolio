@@ -2,6 +2,8 @@
 
 .container {
   position: relative;
+  max-width: 100dvw;
+  width: 100dvw;
   height: 110vh;
   background-color: var(--bg-primary);
   border-bottom: 3px solid var(--color-sec);
