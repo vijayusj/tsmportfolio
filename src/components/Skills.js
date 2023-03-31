@@ -1,5 +1,3 @@
-import React from 'react';
-// import '../sass/_skills.scss';
 const Skills = () => {
   return (
     <div className="skills">

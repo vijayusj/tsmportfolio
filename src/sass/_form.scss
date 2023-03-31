@@ -2,11 +2,11 @@
 
 .container {
   position: relative;
-  max-width: 100dvw;
-  width: 100dvw;
+  max-width: 100vw;
+  width: 100vw;
   height: 110vh;
   background-color: var(--bg-primary);
-  border-bottom: 3px solid var(--color-sec);
+  border-bottom: 2px solid var(--color-sec);
   .text {
     @include heading;
 
@@ -16,27 +16,15 @@
     // margin-bottom: 1rem;
   }
   .ani {
-    color: aliceblue;
-    // z-index: 99;
     position: absolute;
-    top: 10rem;
-    left: 0;
-
-    #tsparticles {
-      z-index: -1;
-      height: 90vh;
-      width: 90vw;
-
-      // max-width: 100rem;
-      // max-height: 100rem;
-    }
+    z-index: 99;
   }
 
   .form-container {
     // position: relative;
     // height: 90vh;
     height: 90vh;
-    max-width: 100dvw;
+    max-width: 100vw;
     text-align: center;
 
     // background-color: rgba(127, 255, 212, 0.195);
@@ -73,7 +61,7 @@
         justify-content: center;
         column-gap: 2%;
         // transition: transform 0.3s ease;
-        box-shadow: rgba(203, 84, 203, 0.427) -1.5px -1.5px 5px 1px,
+        box-shadow: rgba(220, 57, 220, 0.427) -3px -3px 5px 1px,
           rgb(0, 0, 0) 1px 1px 5px 1px;
         label {
           color: var(--color-primary);
@@ -83,9 +71,6 @@
           font-size: 2rem;
           // background-color: rgb(55, 185, 163);
           transition: all 0.2s ease-in-out;
-          // display: flex;
-          // align-items: center;
-          // justify-content: center;
         }
         .underline {
           z-index: 2;
@@ -125,28 +110,23 @@
           padding: 1%;
           // box-shadow: white;
           border: none;
-          // border-bottom: 0.1px solid white;
+
           // transition: all 0.2s ease;
           font-size: 2.4rem;
           // color: rgb(255, 3, 167);
-          color: rgb(6, 241, 163);
+          color: var(--form-txt);
 
           &:focus {
             outline: none;
-
-            // border-left: 3px solid green;
           }
           &:focus ~ label {
-            // transform-origin: left;
-
-            // transform: scale(1.3);
             font-size: 2.5rem;
             // color: green;
             @include grade-bg;
           }
           &:focus ~ .underline {
             transform: scaleX(1);
-            background: linear-gradient(to right, yellow, white);
+            background: var(--bg-grade2);
           }
 
           &:focus ~ .flash {
@@ -166,11 +146,7 @@
         padding: 17px 40px;
         border-radius: 50px;
         border: 0;
-        background: linear-gradient(
-          to right top,
-          rgb(44, 220, 20),
-          rgb(194, 47, 192)
-        );
+        background: var(--bg-grade1);
         box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
         letter-spacing: 1.5px;
         text-transform: uppercase;
@@ -230,9 +206,6 @@
   }
 
   @include tablet {
-    .text {
-      // height: 10vh;
-    }
     .form-container {
       .form {
         height: 90%;

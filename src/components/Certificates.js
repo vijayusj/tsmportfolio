@@ -1,18 +1,22 @@
-import React from 'react';
-import { cert } from './utils';
+import { useState } from 'react';
+import CertA from './CertA';
+import CertB from './CertB';
+
 const Certificates = () => {
+  const [view, setView] = useState(true);
   return (
-    <div className="cerf">
-      <ul>
-        {cert.map(({ id, src, name }) => {
-          return (
-            <li key={id}>
-              <h2>{name}</h2>
-              <img src={src} alt="cerf" />
-            </li>
-          );
-        })}
-      </ul>
+    <div className="cert-container">
+      <div className="heading">
+        <div className="text">
+          <h1 className="heading">
+            certifi<span>cat</span>e<span>s</span>:
+          </h1>
+        </div>
+        <button className="view" onClick={() => setView(!view)}>
+          change <span className="ani">👀</span>
+        </button>
+      </div>
+      {view ? <CertA /> : <CertB />}
     </div>
   );
 };

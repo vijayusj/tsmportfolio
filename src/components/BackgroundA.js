@@ -1,4 +1,4 @@
-import React, {  useCallback } from 'react';
+import React, { useCallback } from 'react';
 import Particles from 'react-particles';
 import { loadFull } from 'tsparticles';
 
@@ -8,11 +8,7 @@ const BackgroundA = ({ ani }) => {
       enable: false,
       zIndex: -1,
     },
-    background: {
-      color: {
-        value: '#0b0611',
-      },
-    },
+
     fpsLimit: 120,
     interactivity: {
       events: {
@@ -45,7 +41,7 @@ const BackgroundA = ({ ani }) => {
         color: 'rgb(238, 83, 238)',
         distance: 150,
         enable: true,
-        opacity: 0.5,
+        opacity: 1,
         width: 1,
       },
       collisions: {
@@ -65,7 +61,7 @@ const BackgroundA = ({ ani }) => {
           enable: false,
           // area: 800,
         },
-        value: 30,
+        value: 25,
       },
 
       opacity: {
@@ -214,7 +210,7 @@ const BackgroundA = ({ ani }) => {
   }, []);
 
   const particlesLoaded = useCallback(async (container) => {
-    await console.log(container);
+    // await console.log(container);
   }, []);
 
   return (
@@ -222,6 +218,7 @@ const BackgroundA = ({ ani }) => {
       <div className="blast">
         {ani && (
           <Particles
+            style={{ background: 'white' }}
             id="tsparticles"
             init={particlesInit}
             loaded={particlesLoaded}

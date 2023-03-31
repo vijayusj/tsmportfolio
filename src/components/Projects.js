@@ -1,4 +1,3 @@
-import React from 'react';
 import { projects } from './utils';
 import { FaEye, FaGithub } from 'react-icons/fa';
 const Projects = () => {
@@ -35,11 +34,11 @@ const Projects = () => {
                 <div className="back face">
                   <p>{description}</p>
                   <div className="links">
-                    <a href="https://github.com/vijayusj">
+                    <a href={preview} target="_blank" rel="noreferrer">
                       <FaEye className="icon" />
                     </a>
-                    <a href="https://github.com/vijayusj">
-                      <FaGithub className="icon" />
+                    <a href={sourceCode} target="_blank" rel="noreferrer">
+                      {sourceCode ? <FaGithub className="icon" /> : ''}
                     </a>
                   </div>
                 </div>

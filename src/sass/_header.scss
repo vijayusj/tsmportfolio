@@ -10,7 +10,7 @@
   // }
   .part {
     // position: absolute;
-
+    background-color: var(--bg-primary);
     #tsparticles {
       width: 100dvw;
       height: 100dvh;
@@ -52,7 +52,7 @@
         }
         70% {
           transform: rotate(0deg);
-        } /* Reset for the last half to pause */
+        }
         100% {
           transform: rotate(0deg);
         }
@@ -200,8 +200,7 @@
 
       &:hover {
         background-color: var(--icon-hover);
-        box-shadow: rgba(205, 205, 69, 0.9) 0px 15px 25px,
-          rgba(27, 160, 27, 0.9) 0px 5px 10px;
+        box-shadow: var(--box-shadow3);
       }
     }
     a {
@@ -327,7 +326,7 @@
           font-size: 2rem;
         }
         .type {
-          font-size: 2rem;
+          font-size: 1.8rem;
         }
       }
     }
@@ -336,7 +335,7 @@
       width: 24rem;
       // bottom: 22%;
       top: 6%;
-      right: 18%;
+      right: 16%;
       img {
         height: 32rem;
         width: 24rem;

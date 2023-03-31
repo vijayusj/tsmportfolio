@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-// import React, { useRef } from 'react';
+import { useRef, useState } from 'react';
+
 import emailjs from '@emailjs/browser';
 import BackgroundA from './BackgroundA';
 const Form = () => {
@@ -39,10 +39,7 @@ const Form = () => {
           Cont<span>act</span> :
         </h1>
       </div>
-      <div className="ani">
-        {blast && <BackgroundA ani="" />}
-        {/* <BackgroundA ani="" /> */}
-      </div>
+      <div className="ani">{blast && <BackgroundA ani="" />}</div>
 
       <div className="form-container">
         <form className="form" ref={form} onSubmit={sendEmail}>

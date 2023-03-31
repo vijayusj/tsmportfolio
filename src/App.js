@@ -2,15 +2,14 @@ import { useEffect } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Skills from './components/Skills';
-import Navigation from './components/Navigation';
+// import Navigation from './components/Navigation';
 import Settings from './components/Settings';
 import Certificates from './components/Certificates';
 import Projects from './components/Projects';
-import Cert from './components/Cert';
+
 import Form from './components/Form';
 import Footer from './components/Footer';
-// import './sass/_mainstyles.scss';
-// import './sass/_variables.scss';
+
 import './sass/main.scss';
 //aos
 import Aos from 'aos';
@@ -29,8 +28,8 @@ function App() {
       <Header />
       <Skills />
       <Projects />
-      {/* <Certificates /> */}
-      <Cert />
+      <Certificates />
+
       <Form />
       <Footer />
     </div>

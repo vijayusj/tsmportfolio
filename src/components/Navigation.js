@@ -1,10 +1,8 @@
-import React from 'react';
-// import '../sass/_Navigation.scss';
 const Navigation = () => {
   function click() {
     document.querySelector('.btns').classList.toggle('active');
 
-    console.log('hii');
+    // console.log('hii');
   }
   return (
     <div className="images">

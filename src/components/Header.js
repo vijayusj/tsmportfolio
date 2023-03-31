@@ -1,45 +1,20 @@
-import React, { useRef, useState, useEffect } from 'react';
 import Background from './BackgroundA';
 
 import img1 from '../assets/images/5295497.jpg';
-import img2 from '../assets/images/5295526.jpg';
+
 import img3 from '../assets/images/animated.jpeg';
 import mask from '../assets/images/sjmask_thumbnail.png';
-import {
-  FaVolumeMute,
-  FaVolumeUp,
-  FaLinkedin,
-  FaGithubSquare,
-  FaInstagram,
-} from 'react-icons/fa';
+import { FaLinkedin, FaGithubSquare, FaInstagram } from 'react-icons/fa';
 import { SiLeetcode } from 'react-icons/si';
 // scss
-import ad from '../assets/audio/Cornfield_Chase_Piano_Interstellar-646455.mp3';
-// import '../sass/_header.scss';
+
 import TypeA from './TypeA';
 const Header = () => {
-  // const audioEle = useRef();
-  // const [blast, setBlast] = useState(true);
-  const [play, setPlay] = useState(false);
-
-  const handler = () => {
-    setPlay(!play);
-  };
-
-  // useEffect(() => {
-  //   if (play) {
-  //     audioEle.current.play();
-  //   } else {
-  //     audioEle.current.pause();
-  //   }
-  //   console.log('11');
-  // }, [play]);
-
   return (
     <div className="header">
-      {/* <div className="part">
+      <div className="part">
         <Background ani="ll" />
-      </div> */}
+      </div>
 
       <div className="cont">
         <h1>
@@ -62,17 +37,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      {/* <div>{blast ? <Blast /> : ''}</div> */}
-      {/* <div className="audio">
-        <audio src={ad} ref={audioEle} />
-        <button className="music" onClick={handler}>
-          {play ? (
-            <FaVolumeMute className="ic mute" />
-          ) : (
-            <FaVolumeUp className="ic play" />
-          )}
-        </button>
-      </div> */}
+
       <div className="links">
         <div className="icon li">
           <a

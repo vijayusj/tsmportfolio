@@ -27,13 +27,21 @@
 
 .main[data-theme='dark'] {
   --bg-primary: #212121;
-  // --bg-primary: black;
-  --bg-sec: rgba(255, 255, 255, 0.249);
+
+  --bg-sec: rgba(255, 255, 255, 0.414);
+  --bg-grade1: linear-gradient(
+    to right top,
+    rgb(44, 220, 20),
+    rgb(194, 47, 192)
+  );
+  --bg-grade2: linear-gradient(to right, yellow, white);
 
   --color-primary: aliceblue;
   --color-sec: rgb(255, 5, 5);
   --box-shadow1: rgba(213, 211, 211, 0.35) -4px 5px 4px 0px;
   --box-shadow2: rgba(180, 178, 178, 0.205) 7px 6px 3px 2px;
+  --box-shadow3: rgba(205, 205, 69, 0.9) 0px 5px 25px,
+    rgba(27, 160, 27, 0.9) 0px 5px 10px;
   --box-shadow-mobile: rgba(180, 178, 178, 0.205) 3.5px 3px 3px 2px;
   --box-shadow-projects: rgba(255, 255, 255, 0.168) -4px -2px 5px 1px,
     5px 5px 3px #0e0e0e;
@@ -41,12 +49,39 @@
   --icon-hover: rgb(255, 255, 255);
   --cursor-text: rgb(198, 21, 98);
   --cursor: rgb(7, 148, 9);
+  --project-back: #212121;
+  --slides-bg: #212121;
+  --form-txt: rgb(6, 241, 163);
+  --cert-bg: #212121;
 }
 .main[data-theme='light'] {
-  --bg-primary: #ffffff;
-}
-.main[data-theme='blue'] {
-  --bg-primary: rgb(174, 66, 224);
+  --bg-primary: rgba(240, 232, 232, 0.2);
+  --bg-sec: rgba(0, 0, 0, 0.584);
+  --bg-grade1: linear-gradient(
+    to right top,
+    rgb(213, 20, 220),
+    rgb(189, 194, 47)
+  );
+  --bg-grade2: linear-gradient(to right, rgb(255, 111, 0), rgb(196, 15, 184));
+
+  --color-primary: rgba(0, 0, 0, 0.937);
+  --color-sec: rgb(255, 5, 5);
+  --box-shadow1: rgba(8, 0, 0, 0.618) -4px 5px 4px 0px,
+    rgb(12, 221, 218) 2px -2px 8px 0px;
+  --box-shadow2: rgba(0, 0, 0, 0.447) 4px 4px 5px 2px;
+  --box-shadow3: rgba(205, 205, 69, 0.9) 0px 5px 25px,
+    rgba(27, 160, 27, 0.9) 0px 5px 10px;
+  --box-shadow-mobile: rgba(180, 178, 178, 0.205) 3.5px 3px 3px 2px;
+  --box-shadow-projects: rgba(0, 0, 0, 0.312) -4px -2px 5px 1px,
+    2px 2px 8px #0000004c;
+  --icon-color: rgba(18, 17, 17, 0.885);
+  --icon-hover: rgb(255, 255, 255);
+  --cursor-text: rgb(160, 21, 198);
+  --cursor: rgb(0, 136, 3);
+  --project-back: rgb(255, 255, 255);
+  --slides-bg: rgba(249, 1, 187, 0.421);
+  --form-txt: black;
+  --cert-bg: rgba(0, 0, 0, 0.248);
 }
 
 $break-points: (
@@ -90,7 +125,7 @@ $break-points: (
     // width: auto;
     margin-left: 4rem;
     padding-top: 2rem;
-    color: aliceblue;
+    color: var(--color-primary);
     text-transform: capitalize;
     font-size: 6rem;
     font-family: 'Istok Web', sans-serif;
@@ -133,10 +168,14 @@ $break-points: (
   }
   @include mobile-big {
     height: 12%;
+    h1 {
+      font-size: 3.6rem;
+      margin-left: 1rem;
+    }
   }
 }
 @mixin grade-bg {
-  background: linear-gradient(to right, yellow, white);
+  background: var(--bg-grade2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

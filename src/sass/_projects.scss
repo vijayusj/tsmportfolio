@@ -95,8 +95,9 @@
       }
     }
     .back {
-      background-color: var(--bg-primary);
+      background-color: var(--project-back);
       // width: 40%;
+
       transform: rotateY(180deg);
       overflow: hidden;
 
@@ -115,11 +116,7 @@
         color: var(--color-primary);
       }
       .links {
-        background-image: linear-gradient(
-          to right top,
-          rgb(44, 220, 20),
-          rgb(194, 47, 192)
-        );
+        background: var(--bg-grade1);
         // background: linear-gradient(to right, yellow, white);
         a {
           display: block;

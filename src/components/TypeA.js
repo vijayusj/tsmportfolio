@@ -4,16 +4,16 @@ const TypeA = () => {
   return (
     <TypeAnimation
       sequence={[
-        'Full Stack Developer', // Types 'One'
+        'Full Stack Developer',
         1000, // Waits 1s
-        'BlockChain Enthusiast', // Deletes 'One' and types 'Two'
+        'BlockChain Enthusiast',
         1000, // Waits 2s
-        'WEB 3.0 Enthusiast',
+        'MERN Stack Developer',
+
         1000,
         'UpComing SDE',
         1000, // Types 'Three' without deleting 'Two'
-        'Freelancer',
-        1000,
+        // 'WEB 3.0 Enthusiast',
       ]}
       wrapper="div"
       // cursor={true}
