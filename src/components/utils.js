@@ -1,23 +1,23 @@
 export const cert = [
   {
     id: 1,
-    src: 'cerf-img/HTMl&css.jpg',
+    src: 'cert-img2/HTMl&css.jpg',
     name: 'html&css',
   },
   {
     id: 2,
-    src: 'cerf-img/hackerrank js.png',
+    src: 'cert-img2/hackerrank js.jpg',
     name: 'javascript',
   },
   {
     id: 3,
-    src: 'cerf-img/AlgoExpert_Certificate.pdf.png',
+    src: 'cert-img2/AlgoExpert_Certificate.jpg',
     name: 'Algo-Expert',
   },
-  { id: 4, src: 'cerf-img/javascriptcertificate.jpg', name: 'javaScript' },
-  { id: 5, src: 'cerf-img/javacer.png', name: 'java' },
-  { id: 6, src: 'cerf-img/node cerf.jpg', name: 'Node.js' },
-  { id: 7, src: 'cerf-img/react cerf.jpg', name: 'react' },
+  { id: 4, src: 'cert-img2/javascriptcertificate.jpg', name: 'javaScript' },
+  { id: 5, src: 'cert-img2/javacer.jpg', name: 'java' },
+  { id: 6, src: 'cert-img2/node cerf.jpg', name: 'Node.js' },
+  { id: 7, src: 'cert-img2/react cerf.jpg', name: 'react' },
 ];
 export const projects = [
   {
