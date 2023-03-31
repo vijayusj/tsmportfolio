@@ -57,13 +57,13 @@
   }
   .toggle {
     background-color: inherit;
-    z-index: 90;
+    z-index: 100;
     // background-color: rgba(7, 246, 67, 0.619);
     position: absolute;
     font-size: 3rem;
     padding: 0.6rem;
     top: 50%;
-    transform: translate(-111%, -50%);
+    transform: translate(-110%, -50%);
 
     border-radius: inherit;
     border: none;

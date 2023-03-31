@@ -1,6 +1,5 @@
 @use 'variables' as *;
 .cerf {
-  max-width: 100vw;
   // border-top: 3px solid var(--color-sec);
   background-color: var(--cert-bg);
   // background-color: aqua;
@@ -49,6 +48,7 @@
   img {
     height: 46rem;
     width: 53rem;
+
     border-radius: 6px;
     &:last-child {
       margin-right: 3rem;

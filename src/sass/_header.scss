@@ -1,8 +1,8 @@
 @use 'variables' as *;
 .header {
-  width: 100dvw;
-  height: 100dvh;
-  max-width: 100dvw;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
   // max-height: 100%;
   background-color: var(--bg-primary);
   position: relative;
@@ -12,8 +12,8 @@
     // position: absolute;
     background-color: var(--bg-primary);
     #tsparticles {
-      width: 100dvw;
-      height: 100dvh;
+      width: 100vw;
+      height: 100vh;
     }
   }
   .cont {
@@ -123,6 +123,7 @@
     img {
       height: 44rem;
       width: 34rem;
+      max-width: 100%;
     }
     .mask {
       position: absolute;
@@ -279,7 +280,7 @@
           font-size: 2rem;
         }
         .type {
-          font-size: 2.5rem;
+          font-size: 2.1rem;
         }
       }
     }

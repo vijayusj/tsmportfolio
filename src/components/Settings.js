@@ -6,21 +6,13 @@ import ad from '../assets/audio/Cornfield_Chase_Piano_Interstellar-646455.mp3';
 const Settings = () => {
   const audioEle = useRef();
 
-  const [play, setPlay] = useState(true);
+  const [play, setPlay] = useState(false);
   const [theme, setTheme] = useState(true);
   const [spin, setSpin] = useState(false);
   const handler = () => {
     setPlay(!play);
   };
 
-  useEffect(() => {
-    if (play) {
-      audioEle.current.play();
-    } else {
-      audioEle.current.pause();
-    }
-    // console.log('11');
-  }, [play]);
   function openSpin() {
     setSpin(!spin);
     // console.log('vijay');
@@ -35,6 +27,14 @@ const Settings = () => {
     document.querySelector('.main').dataset.theme = theme ? 'dark' : 'light';
     // console.log(theme);
   }, [theme]);
+  useEffect(() => {
+    if (play) {
+      audioEle.current.play();
+    } else {
+      audioEle.current.pause();
+    }
+    // console.log('11');
+  }, [play]);
   return (
     <div className={`settings ${spin ? 'open' : ''}`}>
       <button className="toggle" onClick={openSpin}>

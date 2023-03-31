@@ -9,6 +9,7 @@
     @include heading;
     // background-color: antiquewhite;
   }
+  overflow-x: hidden;
 }
 .projects {
   padding: 8% 0 8% 0;
@@ -86,6 +87,7 @@
         img {
           height: 100%;
           width: 100%;
+          max-width: 100%;
           border-radius: 5px;
           // object-fit: cover;
           // object-fit: contain;
